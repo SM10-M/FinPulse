@@ -1,6 +1,6 @@
 let sortColumn = "";
 let sortAscending = true;
-const API = "http://127.0.0.1:8000";
+const API = "https://finpulse-api-s42i.onrender.com";
 
 let stocks = [];
 let filteredStocks = [];

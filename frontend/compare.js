@@ -1,5 +1,5 @@
 let comparisonChart = null;
-const API = "http://127.0.0.1:8000";
+const API = "https://finpulse-api-s42i.onrender.com";
 
 const stock1 = document.getElementById("stock1");
 const stock2 = document.getElementById("stock2");
