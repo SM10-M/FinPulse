@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inspector | FinPulse</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inspector.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            📈 <span>FinPulse</span>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Markets</a>
+
+            <a href="screener.html">Screener</a>
+
+            <a href="compare.html">Compare</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+        </div>
+
+        <div class="live-pill">
+
+            🟢 Live Market
+
+        </div>
+
+    </nav>
+
+
+
+    <div class="inspector-container">
+
+        <!-- COMPANY HEADER -->
+
+        <section class="company-hero">
+
+            <div class="hero-left">
+
+                <div class="ticker-badge" id="tickerBadge">
+                    RELIANCE
+                </div>
+
+                <h1 id="companyName">
+                    Loading...
+                </h1>
+
+                <p id="companyDescription"></p>
+
+                <div class="price-row">
+
+                    <h2 id="price"></h2>
+
+                    <span class="price-live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TABS -->
+
+        <div class="tab-bar">
+
+            <button class="tab-btn active" onclick="showTab('chart')">
+
+                📈 Price Chart
+
+            </button>
+
+            <button class="tab-btn" onclick="showTab('fundamentals')">
+
+                📊 Fundamentals
+
+            </button>
+
+            <button class="tab-btn" onclick="showTab('ai')">
+
+                🤖 AI Analysis
+
+            </button>
+
+        </div>
+
+
+        <!-- CHART TAB -->
+
+        <section id="chartTab">
+            <div class="chart-switch">
+
+                <button onclick="switchChart('line')">
+
+                    📈 Line Chart
+
+                </button>
+
+                <button onclick="switchChart('candlestick')">
+
+                    🕯 Candlestick
+
+                </button>
+
+            </div>
+            <div class="chart-card">
+
+                <div id="stockChart"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUNDAMENTALS -->
+
+        <section id="fundamentalsTab" style="display:none;">
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h5>Market Cap</h5>
+                    <h3 id="marketCap"></h3>
+                </div>
+
+                <div class="stat-card">
+                    <h5>P/E Ratio</h5>
+                    <h3 id="pe"></h3>
+                </div>
+
+                <div class="stat-card">
+                    <h5>EPS</h5>
+                    <h3 id="eps"></h3>
+                </div>
+
+                <div class="stat-card">
+                    <h5>Beta</h5>
+                    <h3 id="beta"></h3>
+                </div>
+
+                <div class="stat-card">
+                    <h5>Book Value</h5>
+                    <h3 id="bookValue"></h3>
+                </div>
+
+                <div class="stat-card">
+                    <h5>Dividend Yield</h5>
+                    <h3 id="dividendYield"></h3>
+                </div>
+
+                <div class="stat-card">
+                    <h5>52W High</h5>
+                    <h3 id="high52"></h3>
+                </div>
+
+                <div class="stat-card">
+                    <h5>52W Low</h5>
+                    <h3 id="low52"></h3>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- AI -->
+
+        <section id="aiTab" style="display:none;">
+
+            <div class="ai-card">
+
+                <h2>AI Investment Summary</h2>
+
+                <br>
+
+                <p id="aiText">
+
+                    Loading...
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="inspector.js"></script>
+
+</body>
+
+</html>

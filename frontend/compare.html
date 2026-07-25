@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinPulse Compare</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="compare.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script defer src="compare.js"></script>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            📈 FinPulse
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Markets</a>
+            <a href="screener.html">Screener</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a class="active" href="compare.html">Compare</a>
+            <a href="#">Portfolio</a>
+
+        </div>
+
+    </nav>
+
+    <div class="compare-container">
+
+        <h1>Compare Companies</h1>
+
+        <div class="selectors">
+
+            <select id="stock1"></select>
+
+            <select id="stock2"></select>
+
+            <button id="compareBtn">
+                Compare
+            </button>
+
+        </div>
+
+        <div class="comparison-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Metric</th>
+                        <th id="company1">Company 1</th>
+                        <th id="company2">Company 2</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="comparisonTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="chart-card">
+
+            <canvas id="comparisonChart"></canvas>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

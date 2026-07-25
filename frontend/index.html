@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinPulse</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            📈 <span>FinPulse</span>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a class="active">Markets</a>
+
+            <a href="screener.html">Screener</a>
+
+            <a href="compare.html">Compare</a>
+
+            <a href="portfolio.html">Portfolio</a>
+
+        </div>
+
+        <div class="nav-right">
+
+            <div class="live-pill">
+
+                🟢 Live Market
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+
+            FinPulse Stock Market Dashboard
+
+        </h1>
+
+        <p>
+
+            Track listed Indian companies with live prices, market data and historical charts.
+
+        </p>
+
+    </section>
+
+    <!-- ================= MARKET CARDS ================= -->
+
+    <section class="market-grid">
+        <div class="market-card">
+
+            <h4>NIFTY 50</h4>
+
+            <div id="nifty">
+                Loading...
+            </div>
+
+            <span>Live Index</span>
+
+        </div>
+        <div class="market-card">
+
+            <h4>SENSEX</h4>
+
+            <div id="sensex">
+                Loading...
+            </div>
+
+            <span>Live Index</span>
+
+        </div>
+
+        <div class="market-card">
+
+            <h4>Tracked Stocks</h4>
+
+            <h2 id="stockCount">--</h2>
+
+            <span>Total Companies</span>
+
+        </div>
+
+        <div class="market-card">
+
+            <h4>Market Status</h4>
+
+            <h2>LIVE</h2>
+
+            <span>Yahoo Finance</span>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MARKET STATS ================= -->
+
+    <section class="market-strip">
+
+        <div class="strip-card">
+
+            <h5>Total Companies</h5>
+
+            <p id="companyCount">--</p>
+
+        </div>
+
+        <div class="strip-card">
+
+            <h5>Average Price</h5>
+
+            <p id="avgPrice">--</p>
+
+        </div>
+
+        <div class="strip-card">
+
+            <h5>Market Feed</h5>
+
+            <p>Yahoo Finance</p>
+
+        </div>
+
+        <div class="strip-card">
+
+            <h5>Status</h5>
+
+            <p>🟢 Connected</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= STOCK SECTION ================= -->
+
+    <section class="stock-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+
+                    Tracked Listed Companies
+
+                </h2>
+
+                <p>
+
+                    Real-time market prices and company fundamentals.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="toolbar">
+
+            <input id="search" type="text" placeholder="🔍 Search Company or Ticker">
+
+        </div>
+
+        <!-- FILTERS -->
+
+        <div class="filters">
+
+            <button class="filter active">All</button>
+
+            <button class="filter">Technology</button>
+
+            <button class="filter">Financial Services</button>
+
+            <button class="filter">Energy</button>
+
+            <button class="filter">Healthcare</button>
+
+            <button class="filter">Utilities</button>
+
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <td>Company</td>
+                        <td>Sector</td>
+                        <td>Price</td>
+                        <td>Last Trading Session</td>
+                        <td>Market Cap</td>
+                        <td>P/E</td>
+                        <td>ROE</td>
+                        <td>Inspect Button</td>
+
+
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="stocks">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MODAL ================= -->
+
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <span id="close">&times;</span>
+
+            <div class="modal-top">
+
+                <div>
+
+                    <h2 id="companyName">
+
+                        Loading...
+
+                    </h2>
+
+                    <span id="sector" class="sector-pill"></span>
+
+                </div>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h5>Current Price</h5>
+
+                    <h3 id="price"></h3>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h5>Market Cap</h5>
+
+                    <h3 id="marketCap"></h3>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h5>P/E Ratio</h5>
+
+                    <h3 id="pe"></h3>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h5>Sector</h5>
+
+                    <h3 id="sectorText"></h3>
+
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+
+                <canvas id="stockChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
